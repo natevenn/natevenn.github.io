@@ -1,0 +1,86 @@
+body {
+  background-image: #FDF5E6;
+  border: 5px solid #333;
+  margin: 5px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.blog-title {
+  background-color: #66cdaa;
+  border-bottom: 3px solid #333;
+  font-style: italic;
+  font-family: cursive;;
+  text-align: center;
+  font-size: 44px;
+  color: #333;
+  margin-top: 0px;
+}
+.sailboat-image1 {
+  position: absolute;
+  height: 69px;
+  left: 10px;
+}
+.sailboat-image2 {
+  position: absolute;
+  height: 69px;
+  left: 1848px;
+}
+#header-body{
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 40;
+  overflow: hidden;
+  position:absolute;
+}
+li {
+  float: left;
+  font-size: 20px;
+  margin-top: 30px;
+
+}
+li a {
+  display: block;
+  padding: 14px 16px;
+  color: #333;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 100;
+}
+a:hover {
+  color: red;
+}
+
+.footer_table {
+  color: black;
+  border-bottom: 3px solid black;
+}
+.footer_data {
+  color: black;
+
+}
+
+#homepage-title {
+  text-decoration: none;
+  color: #333;
+  font-family: cursive;
+}
+#homepage-title:hover {
+  color: red;
+}
+#homepage-date {
+  font-family: cursive;
+}
+#blogpost-title {
+  color: #333;
+  font-family: cursive;
+}
+#blogpost-date {
+  color: #333;
+  font-family: cursive;
+}
