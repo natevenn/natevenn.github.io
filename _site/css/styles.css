@@ -24,10 +24,15 @@ body {
 .sailboat-image2 {
   position: absolute;
   height: 69px;
-  left: 1848px;
+  left: 1862px;
 }
 #header-body{
   text-align: center;
+}
+
+.about-me a {
+  text-decoration: none;
+  
 }
 
 ul {
