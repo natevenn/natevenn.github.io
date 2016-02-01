@@ -32,7 +32,7 @@ body {
 
 .about-me a {
   text-decoration: none;
-  
+
 }
 
 ul {
@@ -68,6 +68,12 @@ a:hover {
 .footer_data {
   color: black;
 
+}
+#little-blue-sailing {
+  width: 100px;
+}
+p {
+  font-size: 20px;
 }
 
 #homepage-title {
