@@ -1,19 +1,19 @@
 body {
   background-image: #FDF5E6;
-  border: 5px solid #333;
+  /*border: 5px solid #FDF5E6;*/
   margin: 5px;
   padding-left: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
 }
 .blog-title {
-  background-color: #66cdaa;
-  border-bottom: 3px solid #333;
+  background-color: #3F51B5;
+  border-bottom: 3px solid #3F51B5;
   font-style: italic;
   font-family: cursive;;
   text-align: center;
   font-size: 44px;
-  color: #333;
+  color: #FFFFFF;
   margin-top: 0px;
 }
 .sailboat-image1 {
@@ -51,7 +51,7 @@ li {
 li a {
   display: block;
   padding: 14px 16px;
-  color: #333;
+  color: #FFFFFF;
   padding: 15px;
   text-decoration: none;
   text-align: center;
@@ -62,15 +62,15 @@ a:hover {
 }
 
 .footer_table {
-  color: black;
-  border-bottom: 3px solid black;
+  color: #FFFFFF;
+  border-bottom: 3px solid #3F51B5;
 }
 .footer_data {
-  color: black;
-
+  color: #FFFFFF;
 }
+
 #little-blue-sailing {
-  width: 100px;
+  size: 100px
 }
 p {
   font-size: 20px;
@@ -88,7 +88,7 @@ p {
   font-family: cursive;
 }
 #blogpost-title {
-  color: #333;
+  color: #FFFFFF;
   font-family: cursive;
 }
 #blogpost-date {
