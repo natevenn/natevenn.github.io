@@ -32,7 +32,20 @@ body {
 
 .about-me a {
   text-decoration: none;
+}
 
+.section {
+  background-color: lightgrey;
+}
+
+#flux-diagram {
+  width: 30%;
+  height: 30%;
+}
+
+.content {
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 ul {
@@ -59,6 +72,17 @@ li a {
 }
 a:hover {
   color: red;
+}
+
+h3 {
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+p {
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 .footer_table {
@@ -94,4 +118,5 @@ p {
 #blogpost-date {
   color: #333;
   font-family: cursive;
+  border-bottom: 2px solid grey;
 }
