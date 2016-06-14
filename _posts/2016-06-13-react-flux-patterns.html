@@ -1,0 +1,77 @@
+---
+title: What The Flux
+layout: post
+date: 2016-02-16
+---
+
+<h3>Introduction</h3>
+  <p>The first time I heard the word Flux, in a technical sense, was during a
+  talk about Redux. Ever since then I have asociated Flux with Redux and would
+  use them interchangably, as if they were the same thing. To say they are the
+  same would be like comparing MVC (Model, View, Controller) to Rails. Redux is
+  a concrete implementation of a abstract concept that is called Flux. Flux is
+  simply a architecture or pattern for a web application, much like the MVC is just
+  a way to structure a Rails app.</p>
+  <p>Flux was initially introduced by Facebook as a way to deal with derived
+  data in very large applications. It encourages a single flow of data. It
+  begins with a Action that is propogated in a view by a user. The Action
+  is a object, containing data, that goes through a Dispatcher. The Dispatcher is
+  like a traffic controller for the system and only allows one action to move
+  through the system at a time. The Dispatcher sends the Action to a Store,
+  which is the data layer where all the logic happens. Once something has been
+  updated in the store, it sends the updated object or Action to the appropriate view, where it
+  gets re-renderd.</p><br>
+
+  <h3>Structure and data flow</h3><br>
+  <img src='https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png'>
+  <p>The above diagram is central to the Flux pattern. The three main nodes,
+  dispatcher, store, and views, are all independent and have thier own inputs
+  and outputs. The action is simply the data that gets passed down the chain, to
+  be updated and re-rendered in the view. Lets take a closer look at each
+  node</p><br>
+
+  <h4>View</h4>
+  <p>The view is simply made up of components that render data. There are high
+  level components that compose lower level components. The components can be
+  stateful or stateless, meaning they can store information about changes or
+  return the same data everytime. Components pass thier state as props to child
+  components. In this pattern components do not depend on external mutable
+  state. Components render only the data that they receive from their parent
+  component. In this case we can think of components as pure functions. In other
+  words it will return the same output if give the same input. This makes for
+  very predictable code that is easy to reason with.</p><br>
+
+  <img src='http://blog.mgechev.com/images/overview-components/pure-function.png'><br>
+
+  <h4>Action</h4>
+  <p>Actions are created in a view upon a user requesting a change in state. The
+  view then wraps a helper method around a action, which delegates a
+  call to a dispatcher method. An example of this might be when a user wants to
+  update some text. In the view a event handler will be listening for a user
+  interaction that wants to change some text. That handler will invoke a create
+  action method like UpdateText(oldText, newText). It also adds a <i>type</i>
+  to the action so the dispatcher can match it up to a callback.
+  Actions can also come from servers. For instance when data is initialized or
+  updated and when a server returns an error.</p><br>
+
+  <h4>Dispatcher</h4>
+  <p>The dispacter in a flux app is a simple mechanism for managing the data
+  flow of an action to a store. The dispatcher carries a map of key-value pairs.
+  As an new action comes through the dispatcher, the dispatcher calls a method
+  (dispatch) which takes the action <i>type</i> and iteraties over the map of
+  callbacks and fires off each one associated with the action. The dispatcher
+  becomes even more vital as the application grows and callbacks must be
+  ordered and managed between other stores.</p><br>
+
+  <h4>Store</h4>
+  <p>A dispatcher manages the flow of data, where as the store manages the state
+  of that data. Similar to a model in a MVC, stores handle all the logic.
+  However, unlike a model representing a single object, the store holds many
+  objects. The store receives the data/action via a callback to the dispatcher.
+  Again the action's <i>type</i> is used to determine what methods the store
+  needs to update the state of the action. Once the update is done, the store
+  broadcasts a message that say 'Hey if you are listening, my state has changed'.
+  In reality, the store knows nothing about the view, only about the dispatcher
+  and the action. However, its the responsibility of the view to always be listening
+  for changes to the store, setting its state accordingly and then pushing those
+  changes down the chain of its child components.</p>
