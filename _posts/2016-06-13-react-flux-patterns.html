@@ -58,7 +58,7 @@ date: 2016-06-13
   <p>The dispacter in a flux app is a simple mechanism for managing the data
   flow of an action to a store. The dispatcher carries a map of key-value pairs.
   As an new action comes through the dispatcher, the dispatcher calls a method
-  (dispatch) which takes the action <i>type</i> and iteraties over the map of
+  (dispatch) which takes the action's <i>type</i> and iteraties over the map of
   callbacks and fires off each one associated with the action. The dispatcher
   becomes even more vital as the application grows and callbacks must be
   ordered and managed between other stores.</p><br>
@@ -67,12 +67,38 @@ date: 2016-06-13
   <p>A dispatcher manages the flow of data, where as the store manages the state
   of that data. Similar to a model in a MVC, stores handle all the logic.
   However, unlike a model representing a single object, the store holds many
-  objects. The store receives the data/action via a callback to the dispatcher.
+  objects or models. The store receives the data/action via a callback to the dispatcher.
   Again the action's <i>type</i> is used to determine what methods the store
   needs to update the state of the action. Once the update is done, the store
-  broadcasts a message that say 'Hey if you are listening, my state has changed'.
+  broadcasts a message that says 'Hey if you are listening, my state has changed'.
   In reality, the store knows nothing about the view, only about the dispatcher
   and the action. However, its the responsibility of the view to always be listening
   for changes to the store, setting its state accordingly and then pushing those
-  changes down the chain of its child components.</p>
+  changes down the chain to its child components. And now we have come full cirle! </p>
+
+  <h3 class='section'>In conclusion</h3>
+  <p>I think that flux is a very powerful solution for managing complexity. It's
+  one directional data flow is really the core of Flux. I have compared Flux to
+  MVC multiple time in this post and you might be asking yourself is Flux then
+  better than MVC? The answer is it depends. Facebook implemented Flux because
+  the MVC is not scalable. The unidirectinal flow of data with MVC, on very large
+  applications can have cascading effects that lead to a tangled mess of data
+  flow. The behavior of your application can have undesirable or unpredictable
+  outcomes. With Flux you can easily scale your application because of the
+  stirct rules on how your data moves through the system. You also can easily
+  follow the data since we know where it came from and this makes your
+  application more reliable and quicker to debug. Don't get me wrong, the MVC
+  has stood the test of time and it is still a great way to manage your data.
+  However, it does have some shortcomings on huge code bases and Flux is just a
+  way to solve some of those issues. Lastly, Flux can be used on both small and
+  large applications. For most of us it will just come down to preference. If
+  you are interested in learning more about Flux check out this
+  <a href='https://github.com/facebook/flux/tree/master/examples/flux-todomvc/'>great
+  example flux application</a> provided by Facebook. The <a
+  href='http://facebook.github.io/flux/docs/overview.html'>Flux
+  documentation</a> is another resource with a video explaining why Flux was the
+  right choice for thier applications.</p>
+  <p>I hope this post was useful in giving you a high-level overview of how
+  Flux works. If you enjoyed reading this, then please consider following me on
+  <a href='https://twitter.com/natevenn'>Twitter</a>
 </div>
